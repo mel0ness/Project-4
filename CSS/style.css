@@ -1,0 +1,142 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 63px;
+  align-items: center;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.location {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  background-color: #eaeaea;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.components {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header span {
+  position: absolute;
+  top: 24px;
+  left: 23px;
+  font-size: 18px;
+  visibility: hidden;
+}
+header img {
+  width: 162px;
+}
+
+.buton {
+  padding: 13px 16px 13px 16px;
+  border-radius: 25px;
+  width: 154px;
+  height: 24px;
+  text-align: center;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  position: relative;
+}
+.buton.buton1 {
+  color: white;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(#ff79da, #9356dc);
+}
+.buton.buton1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 0;
+}
+.buton.buton1:hover {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+.buton.buton1:hover::after {
+  opacity: 1;
+}
+.buton.buton2 {
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  color: #9356dc;
+}
+
+.badge {
+  background: rgb(153, 226, 208);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 29px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 2px;
+  color: rgb(0, 135, 102);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.goBack {
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  color: #9356dc;
+}
+.goBackRound {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+
+.heart {
+  position: relative;
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+  height: 22px;
+  font-size: 22px;
+  justify-content: center;
+  align-items: center;
+}
+.heart .full {
+  visibility: hidden;
+}
+.heart img {
+  position: absolute;
+  width: 22px;
+  height: 21px;
+}
+.heart:active .empty {
+  visibility: hidden;
+}
+.heart:active .full {
+  visibility: visible;
+}
+
+/*# sourceMappingURL=style.css.map */

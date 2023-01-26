@@ -1,0 +1,19 @@
+{
+  "name": "p4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./SASS/style.scss:./CSS/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mel0ness: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@github.com/mel0ness/Project-4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mel0ness/Project-4/issues"
+  },
+  "homepage": "https://github.com/mel0ness/Project-4#readme"
+}
