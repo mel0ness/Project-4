@@ -1,0 +1,33 @@
+@mixin heart() {
+  position: relative;
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+  height: 22px;
+  font-size: 22px;
+  justify-content: center;
+  align-items: center;
+
+  & label {
+    width: 22px;
+    height: 22px;
+  }
+
+  & label span {
+    position: absolute;
+  }
+
+  & label .full {
+    background: linear-gradient(#9356dc, #ff79da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    opacity: 0;
+    transition: opacity 2s;
+  }
+
+  & input:checked + label .full {
+    opacity: 1;
+  }
+}

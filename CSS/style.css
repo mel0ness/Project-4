@@ -33,6 +33,12 @@ header {
   flex-direction: column;
 }
 
+.presentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 header span {
   position: absolute;
   top: 24px;
@@ -84,14 +90,15 @@ header img {
 }
 
 .badge {
+  position: absolute;
+  top: 13px;
+  right: 14px;
   background: rgb(153, 226, 208);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 80px;
   height: 29px;
-  margin: auto;
-  margin-top: 20px;
   border-radius: 2px;
   color: rgb(0, 135, 102);
   font-family: "Roboto", sans-serif;
@@ -114,6 +121,11 @@ header img {
   border-radius: 25px;
 }
 
+.secret {
+  position: absolute;
+  visibility: hidden;
+}
+
 .heart {
   position: relative;
   display: flex;
@@ -124,19 +136,161 @@ header img {
   justify-content: center;
   align-items: center;
 }
-.heart .full {
-  visibility: hidden;
-}
-.heart img {
-  position: absolute;
+.heart label {
   width: 22px;
-  height: 21px;
+  height: 22px;
 }
-.heart:active .empty {
+.heart label span {
+  position: absolute;
+}
+.heart label .full {
+  background: linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  opacity: 0;
+  transition: opacity 2s;
+}
+.heart input:checked + label .full {
+  opacity: 1;
+}
+
+.plate {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+  box-shadow: 0px 4.0114941597px 15.0431032181px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  width: 340px;
+  gap: 10px;
+}
+.plate .plate-firstChild {
+  width: 80%;
+  white-space: nowrap;
+  margin: 12px 0 12px 10px;
+}
+.plate .plate-firstChild h3 {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.plate .plate-firstChild p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.plate .price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: flex-end;
+  margin: 12px 8px 12px 0;
+}
+.plate .plate-lastChild {
+  display: flex;
+  width: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+  background-color: #99e2d0;
+  transition: width 400ms, position 200ms;
+}
+.plate .plate-lastChild span {
+  color: white;
   visibility: hidden;
+  transition: 200ms;
 }
-.heart:active .full {
+
+.presentation input:checked + label .plate-lastChild {
+  width: 22%;
+}
+
+.presentation input:checked + label .plate-lastChild span {
   visibility: visible;
+}
+
+.restau {
+  display: flex;
+  flex-direction: column;
+  width: 335px;
+  height: 251px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+.restau img {
+  height: 174px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+.restau-infos {
+  display: flex;
+  flex-direction: row;
+}
+.restau-name {
+  display: flex;
+  flex-direction: column;
+  width: 78%;
+  margin: 16px 0 0 13px;
+  gap: 5px;
+}
+.restau-name h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+}
+.restau-name p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  margin: 0;
+}
+.restau .heart1 {
+  position: relative;
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+  height: 22px;
+  font-size: 22px;
+  justify-content: center;
+  align-items: center;
+}
+.restau .heart1 label {
+  width: 22px;
+  height: 22px;
+}
+.restau .heart1 label span {
+  position: absolute;
+}
+.restau .heart1 label .full {
+  background: linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  opacity: 0;
+  transition: opacity 2s;
+}
+.restau .heart1 input:checked + label .full {
+  opacity: 1;
+}
+
+.nouveau {
+  position: relative;
 }
 
 /*# sourceMappingURL=style.css.map */

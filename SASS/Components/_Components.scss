@@ -58,14 +58,15 @@ header {
 }
 
 .badge {
+  position: absolute;
+  top: 13px;
+  right: 14px;
   background: rgba(153, 226, 208, 1);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 80px;
   height: 29px;
-  margin: auto;
-  margin-top: 20px;
   border-radius: 2px;
   color: rgba(0, 135, 102, 1);
   font-family: $font;
@@ -89,31 +90,138 @@ header {
   }
 }
 
+.secret {
+  position: absolute;
+  visibility: hidden;
+}
+
+// Coeur avec toggle
+
 .heart {
+  @include heart();
+}
+
+// toggle de la sélection des plats
+
+.plate {
   position: relative;
   display: flex;
+  justify-content: center;
   margin: auto;
   margin-top: 20px;
-  height: 22px;
-  font-size: 22px;
-  justify-content: center;
-  align-items: center;
+  box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px
+    rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  width: 340px;
+  gap: 10px;
 
-  & .full {
-    visibility: hidden;
+  & .plate-firstChild {
+    width: 80%;
+    white-space: nowrap;
+    margin: 12px 0 12px 10px;
+
+    & h3 {
+      margin: 0;
+      font-family: $font;
+      font-weight: 500;
+      font-size: 18px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    & p {
+      margin: 0;
+      font-family: $font;
+      font-weight: 300;
+      font-size: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
+
+  & .price {
+    font-family: $font;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    align-items: flex-end;
+    margin: 12px 8px 12px 0;
+  }
+
+  & .plate-lastChild {
+    display: flex;
+    width: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 15px 15px 0;
+    background-color: #99e2d0;
+    transition: width 400ms, position 200ms;
+
+    & span {
+      color: white;
+      visibility: hidden;
+      transition: 200ms;
+    }
+  }
+}
+
+.presentation input:checked + label .plate-lastChild {
+  width: 22%;
+}
+
+.presentation input:checked + label .plate-lastChild span {
+  visibility: visible;
+}
+
+.restau {
+  display: flex;
+  flex-direction: column;
+  width: 335px;
+  height: 251px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
 
   & img {
-    position: absolute;
-    width: 22px;
-    height: 21px;
+    height: 174px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
   }
 
-  &:active .empty {
-    visibility: hidden;
+  &-infos {
+    display: flex;
+    flex-direction: row;
   }
 
-  &:active .full {
-    visibility: visible;
+  &-name {
+    display: flex;
+    flex-direction: column;
+    width: 78%;
+    margin: 16px 0 0 13px;
+    gap: 5px;
+
+    & h3 {
+      font-family: $font;
+      font-weight: 700;
+      font-size: 18px;
+      margin: 0;
+    }
+    & p {
+      font-family: $font;
+      font-weight: 300;
+      font-size: 17px;
+      margin: 0;
+    }
   }
+
+  & .heart1 {
+    @include heart();
+  }
+}
+
+.nouveau {
+  position: relative;
 }
