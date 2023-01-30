@@ -433,7 +433,8 @@ a {
   margin: 12px 0 12px 10px;
   transition: width 400ms;
 }
-.plate .plate-firstChild h3 {
+.plate .plate-firstChild span.h3 {
+  display: block;
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -441,8 +442,9 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.plate .plate-firstChild p {
+.plate .plate-firstChild span.p {
   margin: 0;
+  display: block;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 15px;
@@ -464,19 +466,24 @@ a {
   width: 0;
   border-radius: 0 15px 15px 0;
   background-color: #99e2d0;
-  transition: width 400ms, position 200ms;
+  transition: 400ms;
 }
 .plate .plate-lastChild span {
+  position: relative;
+  transform: translateX(-100%);
+  z-index: -5;
   color: white;
   visibility: hidden;
-  transition: 200ms;
+  transition: 400ms;
 }
 
 .presentation input:checked + label .plate-lastChild {
   width: 22%;
 }
 .presentation input:checked + label .plate-lastChild span {
+  z-index: 5;
   visibility: visible;
+  transform: translateX(0);
 }
 
 .presentation input:checked + label .plate-firstChild {
