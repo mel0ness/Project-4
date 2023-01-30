@@ -124,7 +124,8 @@ a {
     margin: 12px 0 12px 10px;
     transition: width 400ms;
 
-    & h3 {
+    & span.h3 {
+      display: block;
       margin: 0;
       font-family: $font;
       font-weight: 500;
@@ -133,8 +134,9 @@ a {
       text-overflow: ellipsis;
     }
 
-    & p {
+    & span.p {
       margin: 0;
+      display: block;
       font-family: $font;
       font-weight: 300;
       font-size: 15px;
