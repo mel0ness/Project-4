@@ -60,6 +60,7 @@ header {
       font-weight: 500;
       font-size: 16px;
       width: 322px;
+      max-width: 80%;
       height: 73px;
       background-color: rgba(246, 246, 246, 1);
       border-radius: 20px;
@@ -164,6 +165,7 @@ footer {
     gap: 30px;
     padding-top: 32px;
     position: relative;
+    max-width: 97%;
 
     & h1 {
       margin: 0;
@@ -177,6 +179,7 @@ footer {
     position: relative;
     height: 27px;
     width: 340px;
+    max-width: 100%;
     margin-top: 40px;
     animation: appear 1s ease-out both;
 
@@ -210,6 +213,7 @@ footer {
 
 .presentation {
   @include flex;
+  max-width: 100%;
   animation: appear 1s ease-out both;
 
   @for $i from 1 through 10 {
