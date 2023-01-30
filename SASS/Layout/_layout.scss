@@ -67,6 +67,14 @@ header {
       position: relative;
       padding-right: 15px;
 
+      &:hover {
+        background-color: rgba(245, 237, 255, 1);
+
+        & span {
+          color: $primaire;
+        }
+      }
+
       & .step-number {
         @include flex;
         border-radius: 50%;
@@ -140,13 +148,73 @@ footer {
     }
   }
 }
+
+.plats {
+  position: relative;
+  top: -32px;
+  margin-bottom: -32px;
+  @include flex-column;
+  z-index: 1;
+  background-color: rgba(246, 246, 246, 1);
+  width: 100%;
+  border-radius: 40px 40px 0 0;
+
+  & .flexy-int {
+    @include flex-row;
+    gap: 30px;
+    padding-top: 32px;
+    position: relative;
+
+    & h1 {
+      margin: 0;
+      font-family: $Hfont;
+      font-weight: 400;
+      font-size: 28px;
+    }
+  }
+
+  & .typePlat {
+    position: relative;
+    height: 27px;
+    width: 340px;
+    margin-top: 40px;
+    animation: appear 1s ease-out both;
+
+    @for $i from 1 through 3 {
+      &--#{$i} {
+        animation-delay: (($i * 1.5s)-1.5s);
+      }
+    }
+  }
+
+  & h4 {
+    font-family: $font;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: left;
+    margin: 0;
+  }
+  & .trait {
+    width: 40px;
+    height: 5px;
+    border-bottom: solid 3px rgba(153, 226, 208, 1);
+    text-align: left;
+  }
+
+  & .buton {
+    width: 186px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
 .presentation {
   @include flex;
   animation: appear 1s ease-out both;
 
-  @for $i from 1 through 13 {
+  @for $i from 1 through 10 {
     &--#{$i} {
-      animation-delay: ($i * 1s);
+      animation-delay: ($i * 500ms);
     }
   }
 }

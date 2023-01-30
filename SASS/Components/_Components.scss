@@ -107,7 +107,7 @@ a {
 .plate {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   margin-top: 20px;
   box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px
@@ -115,11 +115,13 @@ a {
   border-radius: 15px;
   width: 340px;
   gap: 10px;
+  cursor: pointer;
 
   & .plate-firstChild {
     width: 80%;
     white-space: nowrap;
     margin: 12px 0 12px 10px;
+    transition: width 400ms;
 
     & h3 {
       margin: 0;
@@ -166,10 +168,14 @@ a {
 
 .presentation input:checked + label .plate-lastChild {
   width: 22%;
+
+  & span {
+    visibility: visible;
+  }
 }
 
-.presentation input:checked + label .plate-lastChild span {
-  visibility: visible;
+.presentation input:checked + label .plate-firstChild {
+  width: 60%;
 }
 
 // Cartes restaurants
@@ -222,4 +228,18 @@ a {
 
 .nouveau {
   position: relative;
+}
+
+// pages de restautans
+
+.img {
+  height: 275px;
+  position: relative;
+  z-index: -1;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }

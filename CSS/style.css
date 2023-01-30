@@ -100,6 +100,12 @@ header {
   position: relative;
   padding-right: 15px;
 }
+.fonctionnement .flexy-int .elements:hover {
+  background-color: rgb(245, 237, 255);
+}
+.fonctionnement .flexy-int .elements:hover span {
+  color: #9356dc;
+}
 .fonctionnement .flexy-int .elements .step-number {
   display: flex;
   justify-content: center;
@@ -182,6 +188,69 @@ footer .flexy-int span {
   margin-right: 11px;
 }
 
+.plats {
+  position: relative;
+  top: -32px;
+  margin-bottom: -32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  background-color: rgb(246, 246, 246);
+  width: 100%;
+  border-radius: 40px 40px 0 0;
+}
+.plats .flexy-int {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px;
+  padding-top: 32px;
+  position: relative;
+}
+.plats .flexy-int h1 {
+  margin: 0;
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  font-size: 28px;
+}
+.plats .typePlat {
+  position: relative;
+  height: 27px;
+  width: 340px;
+  margin-top: 40px;
+  animation: appear 1s ease-out both;
+}
+.plats .typePlat--1 {
+  animation-delay: 0s;
+}
+.plats .typePlat--2 {
+  animation-delay: 1.5s;
+}
+.plats .typePlat--3 {
+  animation-delay: 3s;
+}
+.plats h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: left;
+  margin: 0;
+}
+.plats .trait {
+  width: 40px;
+  height: 5px;
+  border-bottom: solid 3px rgb(153, 226, 208);
+  text-align: left;
+}
+.plats .buton {
+  width: 186px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .presentation {
   display: flex;
   justify-content: center;
@@ -189,43 +258,34 @@ footer .flexy-int span {
   animation: appear 1s ease-out both;
 }
 .presentation--1 {
-  animation-delay: 1s;
+  animation-delay: 500ms;
 }
 .presentation--2 {
-  animation-delay: 2s;
+  animation-delay: 1000ms;
 }
 .presentation--3 {
-  animation-delay: 3s;
+  animation-delay: 1500ms;
 }
 .presentation--4 {
-  animation-delay: 4s;
+  animation-delay: 2000ms;
 }
 .presentation--5 {
-  animation-delay: 5s;
+  animation-delay: 2500ms;
 }
 .presentation--6 {
-  animation-delay: 6s;
+  animation-delay: 3000ms;
 }
 .presentation--7 {
-  animation-delay: 7s;
+  animation-delay: 3500ms;
 }
 .presentation--8 {
-  animation-delay: 8s;
+  animation-delay: 4000ms;
 }
 .presentation--9 {
-  animation-delay: 9s;
+  animation-delay: 4500ms;
 }
 .presentation--10 {
-  animation-delay: 10s;
-}
-.presentation--11 {
-  animation-delay: 11s;
-}
-.presentation--12 {
-  animation-delay: 12s;
-}
-.presentation--13 {
-  animation-delay: 13s;
+  animation-delay: 5000ms;
 }
 
 header a {
@@ -324,7 +384,6 @@ a {
   position: relative;
   display: flex;
   margin: auto;
-  margin-top: 20px;
   height: 22px;
   font-size: 22px;
   justify-content: center;
@@ -333,6 +392,7 @@ a {
 .heart label {
   width: 22px;
   height: 22px;
+  cursor: pointer;
 }
 .heart label span {
   position: absolute;
@@ -353,18 +413,20 @@ a {
 .plate {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   margin-top: 20px;
   box-shadow: 0px 4.0114941597px 15.0431032181px 0px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   width: 340px;
   gap: 10px;
+  cursor: pointer;
 }
 .plate .plate-firstChild {
   width: 80%;
   white-space: nowrap;
   margin: 12px 0 12px 10px;
+  transition: width 400ms;
 }
 .plate .plate-firstChild h3 {
   margin: 0;
@@ -408,9 +470,12 @@ a {
 .presentation input:checked + label .plate-lastChild {
   width: 22%;
 }
-
 .presentation input:checked + label .plate-lastChild span {
   visibility: visible;
+}
+
+.presentation input:checked + label .plate-firstChild {
+  width: 60%;
 }
 
 .restau {
@@ -454,7 +519,6 @@ a {
   position: relative;
   display: flex;
   margin: auto;
-  margin-top: 20px;
   height: 22px;
   font-size: 22px;
   justify-content: center;
@@ -463,6 +527,7 @@ a {
 .restau .heart1 label {
   width: 22px;
   height: 22px;
+  cursor: pointer;
 }
 .restau .heart1 label span {
   position: absolute;
@@ -482,6 +547,17 @@ a {
 
 .nouveau {
   position: relative;
+}
+
+.img {
+  height: 275px;
+  position: relative;
+  z-index: -1;
+}
+.img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
