@@ -1,10 +1,11 @@
 header {
-  & span {
+  & a {
     position: absolute;
     top: 24px;
     left: 23px;
+  }
+  & span {
     font-size: 18px;
-    visibility: hidden;
   }
   & img {
     width: 162px;
@@ -13,10 +14,14 @@ header {
 
 // Boutons du site
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .buton {
   padding: 13px 16px 13px 16px;
   border-radius: 25px;
-  width: 154px;
   height: 24px;
   text-align: center;
   margin: auto;
@@ -58,13 +63,11 @@ header {
 }
 
 .badge {
+  @include flex;
   position: absolute;
   top: 13px;
   right: 14px;
   background: rgba(153, 226, 208, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 80px;
   height: 29px;
   border-radius: 2px;
@@ -74,12 +77,10 @@ header {
 }
 
 .goBack {
-  display: flex;
+  @include flex;
   margin: auto;
   margin-top: 20px;
   font-size: 18px;
-  justify-content: center;
-  align-items: center;
   color: $primaire;
 
   &Round {
@@ -149,10 +150,8 @@ header {
   }
 
   & .plate-lastChild {
-    display: flex;
+    @include flex;
     width: 0;
-    justify-content: center;
-    align-items: center;
     border-radius: 0 15px 15px 0;
     background-color: #99e2d0;
     transition: width 400ms, position 200ms;
@@ -173,14 +172,13 @@ header {
   visibility: visible;
 }
 
+// Cartes restaurants
+
 .restau {
   display: flex;
   flex-direction: column;
   width: 335px;
   height: 251px;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 50px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
 
