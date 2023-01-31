@@ -46,12 +46,22 @@ header {
     font-weight: 700;
     font-size: 24px;
     margin: 48px 0 0 20px;
+
+    @media screen and (min-width: $breakOne) {
+      margin: 50px 0 0 20px;
+    }
+    @media screen and (min-width: $breakTwo) {
+      margin: 50px 0 0 193px;
+    }
   }
 
   & .flexy-int {
     @include flex-column;
     gap: 25px;
     position: relative;
+    @media screen and (min-width: $breakOne) {
+      @include flex-row;
+    }
 
     & .elements {
       @include flex-row;
@@ -67,6 +77,9 @@ header {
       box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
       position: relative;
       padding-right: 15px;
+      @media screen and (min-width: $breakOne) {
+        max-width: 29%;
+      }
 
       &:hover {
         background-color: rgba(245, 237, 255, 1);
@@ -109,11 +122,22 @@ header {
     font-weight: 700;
     font-size: 24px;
     margin: 48px 0 0 20px;
+    @media screen and (min-width: $breakOne) {
+      margin: 50px 0 0 193px;
+    }
   }
 
   & .flexy-int {
     @include flex-column;
     gap: 20px;
+
+    @media screen and (min-width: $breakTwo) {
+      @include flex-row;
+      gap: 26px;
+      margin: 0 0 0 193px;
+      justify-content: flex-start;
+      overflow: scroll;
+    }
   }
 }
 
@@ -129,6 +153,14 @@ footer {
   padding: 22px 0 33px 25px;
   gap: 16px;
 
+  @media screen and (min-width: $breakOne) {
+    @include flex-row;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 71px;
+    padding: 49px 90px 38px 0;
+  }
+
   & h3 {
     margin: 0;
     font-family: $Hfont;
@@ -143,10 +175,17 @@ footer {
     font-family: $font;
     font-weight: 500;
     font-size: 16px;
+    @media screen and (min-width: $breakOne) {
+      @include flex-row;
+      gap: 40px;
+    }
 
     & span {
       margin-right: 11px;
     }
+  }
+  & a {
+    color: white;
   }
 }
 
@@ -159,6 +198,11 @@ footer {
   background-color: rgba(246, 246, 246, 1);
   width: 100%;
   border-radius: 40px 40px 0 0;
+  @media screen and (min-width: $breakTwo) {
+    width: 1055px;
+    margin: auto;
+    margin-bottom: -32px;
+  }
 
   & .flexy-int {
     @include flex-row;
@@ -182,6 +226,9 @@ footer {
     max-width: 100%;
     margin-top: 40px;
     animation: appear 1s ease-out both;
+    @media screen and (min-width: $breakOne) {
+      width: 634px;
+    }
 
     @for $i from 1 through 3 {
       &--#{$i} {
@@ -221,4 +268,15 @@ footer {
       animation-delay: ($i * 500ms);
     }
   }
+}
+
+.loader {
+  @include flex-column;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#ff79da, #9356dc);
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: disappear 2s ease-in 3s forwards;
 }

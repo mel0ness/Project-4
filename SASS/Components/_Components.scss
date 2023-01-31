@@ -12,6 +12,75 @@ header {
   }
 }
 
+// Loader
+
+.anim-text {
+  color: white;
+  display: inline-block;
+  font-family: $Hfont;
+  font-weight: 700;
+  font-size: 48px;
+  transform-origin: bottom left;
+  animation: textBump 1200ms infinite both;
+
+  @for $i from 1 through 3 {
+    &--#{$i} {
+      animation-delay: (($i * 400ms)-400ms);
+    }
+  }
+}
+
+.contain-bar {
+  @include flex-row;
+  position: relative;
+  width: 200px;
+  height: 100px;
+
+  & .egg-1 {
+    @include flex-row;
+    position: relative;
+    margin-right: -5px;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    border-radius: 100%;
+    background-color: white;
+    animation: eggload 600ms infinite both alternate;
+
+    @for $i from 1 through 3 {
+      &--#{$i} {
+        animation-delay: (($i * 200ms)-200ms);
+      }
+    }
+
+    & .egg-2 {
+      @include flex-row;
+      position: absolute;
+      z-index: 2;
+      width: 25px;
+      height: 25px;
+      border-radius: 100%;
+      background: linear-gradient(
+        171deg,
+        rgba(253, 184, 42, 1) 0%,
+        rgba(250, 159, 27, 1) 80%,
+        rgba(244, 122, 8, 1) 100%
+      );
+
+      & .egg-3 {
+        position: absolute;
+        z-index: 3;
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+        border: solid 3px transparent;
+        border-top-color: white;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
 // Boutons du site
 
 a {
@@ -117,6 +186,9 @@ a {
   max-width: 100%;
   gap: 10px;
   cursor: pointer;
+  @media screen and (min-width: $breakOne) {
+    width: 634px;
+  }
 
   & .plate-firstChild {
     width: 80%;
@@ -201,6 +273,10 @@ a {
   height: 251px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+  @media screen and (min-width: $breakTwo) {
+    max-width: unset;
+    min-width: 335px;
+  }
 
   & img {
     height: 174px;
