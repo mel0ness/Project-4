@@ -72,6 +72,35 @@
     height: 0;
   }
 }
+@keyframes defil {
+  0% {
+    transform: translateX(0);
+  }
+  21% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-361px);
+  }
+  46% {
+    transform: translateX(-361px);
+  }
+  50% {
+    transform: translateX(-722px);
+  }
+  71% {
+    transform: translateX(-722px);
+  }
+  75% {
+    transform: translateX(-1083px);
+  }
+  96% {
+    transform: translateX(-1083px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 html {
   box-sizing: border-box;
   margin: 0;
@@ -233,11 +262,6 @@ header {
   .restaurants {
     overflow: hidden;
   }
-  @-moz-document url-prefix() {
-    .restaurants {
-      overflow: visible;
-    }
-  }
 }
 .restaurants h1 {
   font-family: "Roboto", sans-serif;
@@ -257,11 +281,6 @@ header {
   flex-direction: column;
   gap: 20px;
 }
-@-moz-document url-prefix() {
-  .restaurants .flexy-int {
-    overflow: scroll;
-  }
-}
 @media screen and (min-width: 1100px) {
   .restaurants .flexy-int {
     display: flex;
@@ -271,7 +290,10 @@ header {
     gap: 26px;
     margin: 0 0 0 193px;
     justify-content: flex-start;
-    transition: all 2s ease-in-out;
+    animation: defil 18s infinite 2s ease-out forwards;
+  }
+  .restaurants .flexy-int:hover {
+    animation-play-state: paused;
   }
 }
 
@@ -465,54 +487,6 @@ footer a {
   top: 0;
   left: 0;
   animation: disappear 2s ease-in 3s forwards;
-}
-
-.scrolling {
-  display: none;
-}
-@media screen and (min-width: 1100px) {
-  .scrolling {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    position: relative;
-    gap: 15px;
-    order: 3;
-  }
-  @-moz-document url-prefix() {
-    .scrolling {
-      display: none;
-    }
-  }
-  .scrolling label {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(128, 128, 128, 0.3);
-    border-radius: 100%;
-  }
-  .scrolling label:has(.radio:checked) {
-    background: linear-gradient(#ff79da, #9356dc);
-  }
-  .scrolling .radio {
-    position: relative;
-    z-index: -1;
-    width: 19px;
-    height: 19px;
-  }
-  .scrolling:has(.radio--1:checked) + .flexy-int {
-    transform: translateX(0);
-  }
-  .scrolling:has(.radio--2:checked) + .flexy-int {
-    transform: translateX(-360px);
-  }
-  .scrolling:has(.radio--3:checked) + .flexy-int {
-    transform: translateX(-720px);
-  }
-  .scrolling:has(.radio--4:checked) + .flexy-int {
-    transform: translateX(-1080px);
-  }
 }
 
 header a {
@@ -778,11 +752,16 @@ a {
   z-index: -5;
   color: white;
   visibility: hidden;
-  transition: 400ms;
+  transition: 200ms;
 }
 
 .presentation input:checked + label .plate-lastChild {
-  width: 22%;
+  width: 17%;
+}
+@media screen and (min-width: 950px) {
+  .presentation input:checked + label .plate-lastChild {
+    width: 9.3%;
+  }
 }
 .presentation input:checked + label .plate-lastChild span {
   z-index: 5;
@@ -796,6 +775,11 @@ a {
 @media screen and (min-width: 350px) {
   .presentation input:checked + label .plate-firstChild {
     width: 60%;
+  }
+}
+@media screen and (min-width: 950px) {
+  .presentation input:checked + label .plate-firstChild {
+    width: 80%;
   }
 }
 

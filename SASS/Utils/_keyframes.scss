@@ -79,3 +79,33 @@
     height: 0;
   }
 }
+
+@keyframes defil {
+  0% {
+    transform: translateX(0);
+  }
+  21% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-361px);
+  }
+  46% {
+    transform: translateX(-361px);
+  }
+  50% {
+    transform: translateX(-722px);
+  }
+  71% {
+    transform: translateX(-722px);
+  }
+  75% {
+    transform: translateX(-1083px);
+  }
+  96% {
+    transform: translateX(-1083px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -241,13 +241,16 @@ a {
       z-index: -5;
       color: white;
       visibility: hidden;
-      transition: 400ms;
+      transition: 200ms;
     }
   }
 }
 
 .presentation input:checked + label .plate-lastChild {
-  width: 22%;
+  width: 17%;
+  @media screen and (min-width: $breakOne) {
+    width: 9.3%;
+  }
 
   & span {
     z-index: 5;
@@ -261,6 +264,9 @@ a {
 
   @media screen and (min-width: 350px) {
     width: 60%;
+  }
+  @media screen and (min-width: $breakOne) {
+    width: 80%;
   }
 }
 

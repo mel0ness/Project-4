@@ -118,9 +118,6 @@ header {
   padding-bottom: 64px;
   @media screen and (min-width: $breakTwo) {
     overflow: hidden;
-    @-moz-document url-prefix() {
-      overflow: visible;
-    }
   }
 
   & h1 {
@@ -136,16 +133,17 @@ header {
   & .flexy-int {
     @include flex-column;
     gap: 20px;
-    @-moz-document url-prefix() {
-      overflow: scroll;
-    }
 
     @media screen and (min-width: $breakTwo) {
       @include flex-row;
       gap: 26px;
       margin: 0 0 0 193px;
       justify-content: flex-start;
-      transition: all 2s ease-in-out;
+      animation: defil 18s infinite 2s ease-out forwards;
+
+      &:hover {
+        animation-play-state: paused;
+      }
     }
   }
 }
@@ -288,50 +286,4 @@ footer {
   top: 0;
   left: 0;
   animation: disappear 2s ease-in 3s forwards;
-}
-
-.scrolling {
-  display: none;
-
-  @media screen and (min-width: $breakTwo) {
-    @-moz-document url-prefix() {
-      display: none;
-    }
-    @include flex-row;
-    position: relative;
-    gap: 15px;
-    order: 3;
-
-    & label {
-      position: relative;
-      width: 20px;
-      height: 20px;
-      background-color: rgba(128, 128, 128, 0.3);
-      border-radius: 100%;
-    }
-
-    & label:has(.radio:checked) {
-      background: linear-gradient(#ff79da, #9356dc);
-    }
-
-    & .radio {
-      position: relative;
-      z-index: -1;
-      width: 19px;
-      height: 19px;
-    }
-
-    &:has(.radio--1:checked) + .flexy-int {
-      transform: translateX(0);
-    }
-    &:has(.radio--2:checked) + .flexy-int {
-      transform: translateX(-360px);
-    }
-    &:has(.radio--3:checked) + .flexy-int {
-      transform: translateX(-720px);
-    }
-    &:has(.radio--4:checked) + .flexy-int {
-      transform: translateX(-1080px);
-    }
-  }
 }
